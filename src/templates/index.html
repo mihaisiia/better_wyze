@@ -23,7 +23,7 @@
             const switchState = this.checked;
     
             // Make an AJAX request to a Flask route to execute Python code
-            fetch(`/lights?state=${switchState}`)
+            fetch(`/lights?on=${switchState}`)
                 .then(response => response.text())
                 .then(data => {
                     console.log(data)

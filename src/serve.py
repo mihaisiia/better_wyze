@@ -11,7 +11,7 @@ def index():
 @app.route('/lights', methods=['GET'])
 def lights():
     # Get the switch state from the query parameter
-    switch_state = request.args.get('state')
+    switch_state = request.args.get('on')
 
     # Perform some Python code execution based on the switch state
     if switch_state == 'true':
