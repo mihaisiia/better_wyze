@@ -1,5 +1,4 @@
 # better_wyze - enhanced automation capabilities for Wyze devices
-## ** Notice: Project Scope is being expanded, some content may be outdated **
 ## Table of Contents
 * [Introduction](#introduction)
 * [Features](#features)
@@ -10,6 +9,29 @@
 * [Contact](#contact)
 
 ## Features
+* Turn on and off lights
+
+
+## Setup
+
+Set up an API key as described in [Creating an API Key by Wyze Support](https://support.wyze.com/hc/en-us/articles/16129834216731)  
+Set the following environment variables:
+* `WYZE_EMAIL`
+* `WYZE_PASSWORD`
+* `WYZE_API_KEY_ID`
+* `WYZE_API_KEY`
+
+Create a virtual environment with `python -m venv .venv`  
+Activate the virtual environment with `source .venv/bin/activate` (unix) or `.venv\Scripts\Activate` (Windows)  
+Install the dependencies with `pip install -r requirements.txt`
+
+## Usage
+
+```
+cd src
+python serve.py
+```
+
 ### Planned
 #### Fan Control
 * Define weekdays to operate, similar to Wyze behaviors.
@@ -17,7 +39,6 @@
 * Fine control over cycling patterns (i.e. "in time frame 5am-9am, run )
 
 ## Introduction
-#### Outdated
 Currently, the Wyze app offers little in the way of creating custom fan-only schedules and is limited to cycling the fan X amount of minutes for every hour of the day. On warmer days, homeowners without air conditioning may want to run their furnace fans in the mornings/evenings only, yet have no way to automate this behavior.
 
 While others have found success using Home Assistant running on Raspberry Pi, they are [limited to Raspberry Pi 3 or above](https://www.home-assistant.io/installation/raspberrypi/).

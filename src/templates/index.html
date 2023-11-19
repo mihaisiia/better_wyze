@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Wyze</title>
+    <link href="/static/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Better Wyze</h1>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="lightSwitch">
+            <label class="form-check-label" for="lightSwitch">Lights</label>
+        </div>
+    </div>
+    <script src="/static/bootstrap.js"></script>
+
+    <script>
+        const switchElement = document.getElementById('lightSwitch');    
+        switchElement.addEventListener('change', function () {
+            // Get the current state of the switch
+            const switchState = this.checked;
+    
+            // Make an AJAX request to a Flask route to execute Python code
+            fetch(`/lights?state=${switchState}`)
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+    
+</body>
+</html>
