@@ -29,14 +29,12 @@ class BetterWyze:
             with open(token_file) as file:
                 token = file.readline()
                 os.environ[token_env_var_name] = token
-
-        # Use stored tokens if they exist
-        self.client._update_session(
-            access_token=os.environ["WYZE_ACCESS_TOKEN"],
-            refresh_token=os.environ["WYZE_REFRESH_TOKEN"])
         
         # Test tokens, try to generate new ones if they fail
         try:
+            self.client._update_session(
+                access_token=os.environ["WYZE_ACCESS_TOKEN"],
+                refresh_token=os.environ["WYZE_REFRESH_TOKEN"])
             print(self.client.user_get_info())
         except Exception as e:
             self.client = Client()
