@@ -16,6 +16,7 @@
 
 Set up an API key as described in [Creating an API Key by Wyze Support](https://support.wyze.com/hc/en-us/articles/16129834216731)  
 Set the following environment variables:
+* `BETTER_WYZE_ROOT`
 * `WYZE_EMAIL`
 * `WYZE_PASSWORD`
 * `WYZE_API_KEY_ID`
